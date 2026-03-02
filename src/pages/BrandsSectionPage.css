@@ -1,0 +1,49 @@
+.brands-page {
+  background: #eef0ea;
+  padding: 5rem 0 5.4rem;
+}
+
+.brands-page h2 {
+  margin: 0 auto 2.2rem;
+  text-align: center;
+  font-size: 24px;
+  /* font-size: clamp(2rem, 2.8vw, 3.5rem); */
+  max-width: 980px;
+  padding: 0 1.2rem;
+}
+
+.brands-page__rows {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.brands-marquee {
+  overflow: hidden;
+  cursor: grab;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+}
+
+.brands-marquee:active {
+  cursor: grabbing;
+}
+
+.brands-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: max-content;
+  padding: 0.3rem 0;
+}
+
+.brands-pill {
+  min-width: 11.2rem;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(12, 42, 41, 0.9);
+  border-radius: 999px;
+  padding: 0.65rem 1.5rem;
+  border: 1px solid rgba(13, 44, 42, 0.14);
+  background: rgba(255, 255, 255, 0.72);
+  user-select: none;
+}

@@ -1,0 +1,8 @@
+.home-page-shell {
+  min-height: 100vh;
+  background: var(--bg-cream);
+}
+
+.home-page-main {
+  width: 100%;
+}

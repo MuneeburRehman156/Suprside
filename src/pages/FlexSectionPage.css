@@ -1,0 +1,128 @@
+.flex-page {
+  background: var(--bg-deep);
+  color: #fff;
+  padding: 5.1rem 4rem 5.6rem;
+}
+
+.flex-page__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.16rem;
+  font-size: 14px;
+  margin-bottom: 0.6rem;
+}
+
+.flex-page h3 {
+  margin: 0;
+  max-width: 830px;
+  font-size:32px;
+  /* font-size: clamp(2.3rem, 4.4vw, 5.4rem); */
+  line-height: 1.05;
+  font-weight: 400;
+}
+.flex-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flex-page h3 em {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.flex-page__grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.flex-page__card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  min-height: 540px;
+}
+
+.flex-page__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.flex-page__hover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  padding: 1.35rem 1.2rem;
+}
+
+.flex-page__base h4 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.flex-page__base {
+  background: rgba(2, 26, 25, 0.75);
+}
+
+.flex-page__hover {
+  background: rgba(4, 37, 36, 0.95);
+  transform: translateY(55%);
+  opacity: 10;
+  transition: transform 0.42s ease, opacity 0.42s ease;
+}
+
+.flex-page__hover h4 {
+  margin: 0 0 0.55rem;
+  font-size: 2.25rem;
+}
+
+.flex-page__hover p {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.36;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.flex-page__card:hover .flex-page__hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.tone-mint .flex-page__hover {
+  background: rgba(40, 99, 86, 0.95);
+}
+
+.tone-cream .flex-page__hover {
+  background: rgba(232, 236, 227, 0.93);
+  color: #172928;
+}
+
+.tone-cream .flex-page__hover p {
+  color: #314645;
+}
+
+.tone-lime .flex-page__hover {
+  background: rgba(200, 243, 104, 0.95);
+  color: #112726;
+}
+
+.tone-lime .flex-page__hover p {
+  color: #2d403d;
+}
+
+@media (max-width: 1220px) {
+  .flex-page__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  .flex-page {
+    padding-inline: 1rem;
+  }
+}
