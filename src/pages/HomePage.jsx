@@ -9,6 +9,10 @@ import CreativeSectionPage from './CreativeSectionPage';
 import FlexSectionPage from './FlexSectionPage';
 import SuccessSectionPage from './SuccessSectionPage';
 import WorkShowcaseSectionPage from './WorkShowcaseSectionPage';
+import CreativeWorkSliderSectionPage from './CreativeWorkSliderSectionPage';
+import TechEnabledSectionPage from './TechEnabledSectionPage';
+import OurWorkGridSectionPage from './OurWorkGridSectionPage';
+import ReviewSectionPage from './ReviewSectionPage';
 import ComparisonSectionPage from './ComparisonSectionPage';
 import './HomePage.css';
 
@@ -84,6 +88,10 @@ function HomePage() {
         <FlexSectionPage />
         <SuccessSectionPage />
         <WorkShowcaseSectionPage />
+        <CreativeWorkSliderSectionPage />
+        <TechEnabledSectionPage />
+        <OurWorkGridSectionPage />
+        <ReviewSectionPage />
         <ComparisonSectionPage />
       </main>
     </div>
