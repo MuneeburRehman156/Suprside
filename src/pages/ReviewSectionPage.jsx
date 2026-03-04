@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FiArrowDown, FiArrowUp, FiArrowUpRight } from 'react-icons/fi';
 import './ReviewSectionPage.css';
 
@@ -55,8 +55,10 @@ const reviews = [
 
 function ReviewSectionPage() {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [avatarStep, setAvatarStep] = useState(196);
+  const avatarsTrackRef = useRef(null);
   const activeReview = reviews[activeIndex];
-  const avatarShift = (1 - activeIndex) * 196;
+  const avatarShift = (1 - activeIndex) * avatarStep;
 
   useEffect(() => {
     const autoplayId = window.setInterval(() => {
@@ -65,6 +67,27 @@ function ReviewSectionPage() {
 
     return () => {
       window.clearInterval(autoplayId);
+    };
+  }, []);
+
+  useEffect(() => {
+    const updateAvatarStep = () => {
+      const track = avatarsTrackRef.current;
+      if (!track || !track.firstElementChild) {
+        return;
+      }
+
+      const avatarHeight = track.firstElementChild.getBoundingClientRect().height;
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.rowGap || styles.gap || '0');
+      setAvatarStep(avatarHeight + gap);
+    };
+
+    updateAvatarStep();
+    window.addEventListener('resize', updateAvatarStep);
+
+    return () => {
+      window.removeEventListener('resize', updateAvatarStep);
     };
   }, []);
 
@@ -80,7 +103,7 @@ function ReviewSectionPage() {
     <section className="review-page reveal-up" id="reviews">
       <div className="review-page__shell">
         <div className="review-page__avatars-mask">
-          <div className="review-page__avatars-track" style={{ transform: `translateY(${avatarShift}px)` }}>
+          <div className="review-page__avatars-track" ref={avatarsTrackRef} style={{ transform: `translateY(${avatarShift}px)` }}>
             {reviews.map((review, index) => (
               <button
                 className={`review-page__avatar ${index === activeIndex ? 'is-active' : ''}`}

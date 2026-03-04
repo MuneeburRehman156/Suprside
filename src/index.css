@@ -28,11 +28,16 @@ html {
 body {
   background: var(--bg-cream);
   color: var(--text-main);
-  font-family: 'Inter Tight', 'Inter Tight', Inter, Arial, sans-serif;
+  font-family: 'Inter Tight', Inter, Arial, sans-serif;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
   overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
 }
 
 a {
@@ -54,8 +59,20 @@ button {
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1280px) {
   html {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 980px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 12px;
   }
 }

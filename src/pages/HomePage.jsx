@@ -14,6 +14,8 @@ import TechEnabledSectionPage from './TechEnabledSectionPage';
 import OurWorkGridSectionPage from './OurWorkGridSectionPage';
 import ReviewSectionPage from './ReviewSectionPage';
 import ComparisonSectionPage from './ComparisonSectionPage';
+import OurDifferenceSectionPage from './OurDifferenceSectionPage';
+import FooterHubSectionPage from './FooterHubSectionPage';
 import './HomePage.css';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -92,7 +94,9 @@ function HomePage() {
         <TechEnabledSectionPage />
         <OurWorkGridSectionPage />
         <ReviewSectionPage />
+        <OurDifferenceSectionPage />
         <ComparisonSectionPage />
+        <FooterHubSectionPage />
       </main>
     </div>
   );

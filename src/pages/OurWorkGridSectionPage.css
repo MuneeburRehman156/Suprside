@@ -14,7 +14,7 @@
   gap: 1.2rem;
 }
 
-.our-work-grid-page__head span {
+.our-work-grid-page__head > div > span {
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0.16rem;
@@ -23,7 +23,7 @@
 
 .our-work-grid-page__head h3 {
   margin: 1rem 0 0;
-  font-size: clamp(2.3rem, 4.7vw, 4.25rem);
+  font-size: clamp(2.2rem, 4.1vw, 4rem);
   line-height: 1.04;
   font-weight: 500;
 }
@@ -42,10 +42,14 @@
   background: transparent;
   color: #0b2e2c;
   border-radius: 999px;
-  min-width: 12rem;
+  width: fit-content;
+  flex: 0 0 auto;
   padding: 0.88rem 1.45rem;
-  font-size: 1.07rem;
+  font-size: 1.02rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16rem;
+  line-height: 1;
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
@@ -53,20 +57,24 @@
 }
 
 .our-work-grid-page__cta-flow {
-  display: grid;
+  position: relative;
+  display: inline-block;
+  height: 1em;
 }
 
 .our-work-grid-page__cta-lane {
-  grid-area: 1 / 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  line-height: 1;
   transform: translateY(0);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .our-work-grid-page__cta-lane:nth-child(2) {
-  transform: translateY(180%);
+  position: absolute;
+  top: 190%;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .our-work-grid-page__cta:hover {
@@ -75,11 +83,11 @@
 }
 
 .our-work-grid-page__cta:hover .our-work-grid-page__cta-lane:nth-child(1) {
-  transform: translateY(-200%);
+  transform: translateY(-190%);
 }
 
 .our-work-grid-page__cta:hover .our-work-grid-page__cta-lane:nth-child(2) {
-  transform: translateY(0);
+  transform: translateY(-190%);
 }
 
 .our-work-grid {
@@ -139,7 +147,7 @@
 .our-work-grid__item p {
   margin: 0.42rem 0 0;
   color: rgba(9, 36, 35, 0.74);
-  font-size: 1.19rem;
+  font-size: clamp(0.98rem, 1.2vw, 1.19rem);
   line-height: 1.35;
 }
 
@@ -150,6 +158,11 @@
 }
 
 @media (max-width: 1200px) {
+  .our-work-grid-page__head {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
   .our-work-grid {
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 1.3rem 1.1rem;
